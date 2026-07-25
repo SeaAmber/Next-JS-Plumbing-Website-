@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { testimonials } from "./data/testimonials";
+
 export default function Home() {
   return(
 
@@ -14,13 +17,15 @@ export default function Home() {
              <li className="text-2xl mt-2 mb-2 px-8">Water Heater Installation</li>
             <li className="text-2xl mt-2 mb-2 px-8">Water Heater Repair</li>
             <li className="text-2xl mt-2 mb-2 px-8">Emergency Plumbing</li>
-            
+
              <p className="mt-8 ">
               This is just a few of the services we provide
              </p>
              <p>Click button below to book a consultation.</p>
 
-            <button className="mt-22 rounded-full bg-black p-12 text-white">Book Here</button>
+            <Link href="/bookings">
+              <button className="mt-22 rounded-full bg-black p-12 text-white">Book Here</button>
+            </Link>
           </div>
           <img src="/heropicture.jpg" alt="plumbing picture" className="w-100 h-200"/>
        </div>
@@ -31,68 +36,18 @@ export default function Home() {
       <h1 className="text-2xl font-bold text-center">A Little About Us</h1>
        <p className="font-semibold text-center mt-6 text-lg">We served over 300 homes in the United States Of America for over 20 years.</p>
        <h1 className="text-center font-semibold text-3xl mt-5 mb-4">Here are some of our happy customers</h1>
-       
-       <div className="grid grid-template-row: repeat(3, minmax(3, 1fr));
- gap-3">
 
-        <div className="testimonial-card">
-         <img src="/callie.jpg" alt="customer testimonial" className="w-100 h-100"/>
-         <h3>Callie McCartney</h3>
-         <p className="testimonial-text">"Professional Service. They fixed my broken water pipe."</p>
-        <span className="testimonial-role">Baltimore,MD</span>
-        </div>
-
-      <div className="testimonial-card">
-         <img src="/callie.jpg" alt="customer testimonial" className="w-100 h-100"/>
-         <h3>Katie Moore</h3>
-         <p className="testimonial-text">"I had a leakage, and they came out fixed it same day."</p>
-        <span className="testimonial-role"></span>
-        </div>
-
-
-        <div className="testimonial-card">
-         <img src="/callie.jpg" alt="customer testimonial" className="w-100 h-100"/>
-         <h3>April Janae</h3>
-         <p className="testimonial-text">"I really appreciate their services. My well stopped working,and it was fixed the next day."</p>
-        <span className="testimonial-role">Baltimore,MD</span>
-        </div>
-
-
-        <div className="testimonial-card">
-         <img src="/callie.jpg" alt="customer testimonial" className="w-100 h-100"/>
-         <h3>Alex Silver</h3>
-         <p className="testimonial-text">"I had several issues before this with my water freezing up. Plumbers before couldn't seem to figure out what was going on. I'm so glad we came across them. It was fixed in less than an hour."</p>
-        <span className="testimonial-role">Baltimore,MD</span>
-        </div>
-
-
-
-
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8 pb-10">
+        {testimonials.map((testimonial) => (
+          <div key={testimonial.name} className="testimonial-card">
+            <img src={testimonial.image} alt="customer testimonial" className="w-100 h-100"/>
+            <h3>{testimonial.name}</h3>
+            <p className="testimonial-text">&quot;{testimonial.quote}&quot;</p>
+            <span className="testimonial-role">{testimonial.location}</span>
+          </div>
+        ))}
        </div>
-      
-       
        </section>
     </main>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
