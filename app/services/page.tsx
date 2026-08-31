@@ -1,3 +1,4 @@
+console.log("Services page loaded");
 export default function Services() {
   return (
     <section className="services-section">

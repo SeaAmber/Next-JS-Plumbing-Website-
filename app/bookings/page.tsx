@@ -1,13 +1,15 @@
-import BookingForm from "@/components/BookingForm";
+'use client'
+import BookingForm from "@/components/BookingForm"
+console.log("Booking Page Loaded");
 
-export default function BookingsPage() {
-  return (
-    <main className="px-6 py-12">
-      <h1 className="text-4xl text-center font-bold">Book a Consultation</h1>
-      <p className="text-center mt-4">
-        Fill out the form below and we will reach out to confirm your appointment.
-      </p>
-      <BookingForm />
-    </main>
-  );
+ export default function Booking() {
+  return  (
+  <div>
+    <h1 className="text-5xl text-center font-bold mt-10 mb-10">Booking Page</h1>
+    <BookingForm />
+  </div>
+  )
 }
+
+
+
