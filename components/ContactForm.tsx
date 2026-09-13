@@ -113,7 +113,7 @@ export default function ContactForm() {
             <select
              id="service" 
              name="service" 
-             className="text-2xl border border-black rounded"
+             className="text-2xl border border-black rounded md:text-sm"
              value={service}
              onChange={(e) => setService(e.target.value)}
              required
@@ -128,7 +128,7 @@ export default function ContactForm() {
             </select>
           </div>
 
-          <div className="mt-10 mb-5 flex justify-center">
+          <div className="mt-10 mb-5 flex flex-col px-4 justify-center">
             <label htmlFor="message" className="text-3xl text-center px-2">Message:</label>
             <textarea 
               id="message"

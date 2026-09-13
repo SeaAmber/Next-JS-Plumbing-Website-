@@ -20,11 +20,11 @@ export default function BookingForm() {
   
 
   const data = {
-      name,
-      email,
-      phone,
-      service,
-      message,
+      fullName: name,
+      email: email,
+      phone: phone,
+      serviceNeeded: service,
+      message: message,
     };
 
 
@@ -58,7 +58,7 @@ try {
 
 
 return (
-  <section className="flex justify-center items-center min-h-screen">
+  <section className="flex justify-center px-12">
     <form  className="flex flex-col w-full max-w-md" onSubmit={handleSubmit}>
   
       {/* 7. CONTROLLED INPUTS */}
@@ -104,7 +104,7 @@ return (
             <select
              id="service" 
              name="service" 
-             className="text-2xl border border-black rounded"
+             className="text-sm border border-black rounded md:text-sm"
              value={service}
              onChange={(e) => setService(e.target.value)}
              required
@@ -120,7 +120,7 @@ return (
              </div>
 
 
-      <div className="mt-10 mb-5 flex justify-center mb-4">
+      <div className="mt-10 mb-5 flex flex-col justify-center mb-4">
             <label htmlFor="message" className="text-3xl text-center px-2">Message:</label>
             <textarea 
               id="message"
